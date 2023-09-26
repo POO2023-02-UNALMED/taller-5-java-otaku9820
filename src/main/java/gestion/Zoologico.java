@@ -6,7 +6,7 @@ import java.util.List;
 public class Zoologico {
     private String nombre;
     private String ubicacion;
-    private List<Zona> zonas;
+    private List<Zona> zonas= new ArrayList<>();
 
     public Zoologico(String nombre, String ubicacion) {
         this.nombre=nombre;
