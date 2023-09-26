@@ -1,56 +1,86 @@
 package zooAnimales;
-import java.util.ArrayList;
+import gestion.Zona;
 
-public class Ave extends Animal{
-	private static ArrayList<Ave> listado = new ArrayList<Ave>();
-	public static int halcones;
-	public static int aguilas;
-	private String colorPlumas;
+public class Animal{
+	private static int totalAnimales = 0;
+	private String nombre;
+	private int edad;
+	private String habitat;
+	private String genero;
+	private Zona zona;
 
-	public Ave(String nombre,int edad,String habitat,String genero,String colorPlumas){
-		super(nombre,edad,habitat,genero);
-		this.colorPlumas = colorPlumas;
-		listado.add(this);
+	public Animal(String nombre,int edad,String habitat,String genero){
+		this.nombre = nombre;
+		this.edad = edad;
+		this. habitat = habitat;
+		this.genero = genero;
+		totalAnimales +=1;
+	}
+	public Animal(){
+		totalAnimales += 1;
 	}
 
-	public Ave(){
-		listado.add(this);
+	public static String totalPorTipo(){
+		return "Mamiferos: "+Mamifero.cantidadMamiferos()+"\nAves: "+Ave.cantidadAves()+"\nReptiles: "+Reptil.cantidadReptiles()+"\nPeces: "+Pez.cantidadPeces()+"\nAnfibios: "+Anfibio.cantidadAnfibios();
 	}
 
-	public static int cantidadAves(){
-		return listado.size();
+	public String toString(){
+		if(this.getZona() != null){
+			return "Mi nombre es "+nombre+", tengo una edad de "+edad+", habito en "+habitat+" y mi genero es "+genero+", la zona en la que me ubico es "+zona+", en el zoo "+zona.getZoo();
+		}else{
+			return "Mi nombre es "+nombre+", tengo una edad de "+edad+", habito en "+habitat+" y mi genero es "+genero;
+		}
 	}
 
-	@Override
 	public String movimiento(){
-		return "volar";
+		return "desplazarse";
 	}
 
-	public static Ave crearHalcon(String nombre,int edad,String genero){
-		Ave halcon = new Ave(nombre,edad,"montanas",genero,"cafe glorioso");
-		halcones += 1;
-		return halcon;
+	public static int getTotalAnimales(){
+		return totalAnimales;
 	}
 
-	public static Ave crearAguila(String nombre,int edad,String genero){
-		Ave aguila = new Ave(nombre,edad,"montanas",genero,"blanco y amarillo");
-		aguilas += 1;
-		return aguila;
+	public static void setTotalAnimales(int totalAnimales){
+		Animal.totalAnimales = totalAnimales;
 	}
 
-	public static ArrayList<Ave> getListado(){
-		return listado;
+	public String getNombre(){
+		return this.nombre;
 	}
 
-	public static void setListado(ArrayList<Ave> listado){
-		Ave.listado = listado;
+	public void setNombre(String nombre){
+		this.nombre = nombre;
 	}
 
-	public String getColorPlumas(){
-		return this.colorPlumas;
+	public int getEdad(){
+		return this.edad;
 	}
 
-	public void setColorPlumas(String colorPlumas){
-		this.colorPlumas = colorPlumas;
+	public void setEdad(int edad){
+		this.edad = edad;
+	}
+
+	public String getHabitat(){
+		return this.habitat;
+	}
+
+	public void setHabitat(String habitat){
+		this.habitat = habitat;
+	}
+
+	public String getGenero(){
+		return this.genero;
+	}
+
+	public void setGenero(String genero){
+		this.genero = genero;
+	}
+
+	public Zona getZona(){
+		return this.zona;
+	}
+
+	public void setZona(Zona zona){
+		this.zona = zona;
 	}
 }
