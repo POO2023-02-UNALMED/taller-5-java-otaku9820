@@ -1,6 +1,7 @@
 package zooAnimales;
 
 import gestion.*;
+import zooAnimales.*;
 
 import java.util.ArrayList;
 import java.util.List;
