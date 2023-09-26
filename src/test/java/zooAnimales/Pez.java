@@ -10,7 +10,7 @@ public class Pez extends Animal{
     private String colorEscamas;
     private int cantidadAletas;
     public Pez() {
-        super();
+
         Pez.listado.add(this);
 
     }
