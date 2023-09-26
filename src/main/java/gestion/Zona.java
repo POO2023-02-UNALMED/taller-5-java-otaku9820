@@ -16,7 +16,7 @@ public class Zona {
     }
 
     public Zona() {
-        this(null,null)
+        this(null,null);
     }
 
     public void setNombre(String nombre) {
