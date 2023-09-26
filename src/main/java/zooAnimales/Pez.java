@@ -29,7 +29,7 @@ public class Pez extends Animal{
     public static int getSalmones() {
         return salmones;
     }
-    public static void setSalmones(int salmones) {
+    public static void setSalmones(int salmoness) {
         Pez.salmones = salmones;
     }
     public static int getBacalaos() {
